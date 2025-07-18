@@ -2,24 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>HP Victus AR Libre</title>
+    <title>HP Victus AR Interactivo</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-gesture-detector@3.0.0/dist/aframe-gesture-detector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-gesture-handler@3.0.0/dist/aframe-gesture-handler.min.js"></script>
   </head>
   <body style="margin: 0; overflow: hidden;">
-    <a-scene 
-      vr-mode-ui="enabled: false" 
-      embedded 
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
       arjs="sourceType: webcam; trackingMethod: best;">
       
-      <!-- Laptop flotando sin marcador -->
       <a-entity 
+        id="laptop"
         gltf-model="https://raw.githubusercontent.com/eleazarcaqui/AR-DEMO/main/hp_victus_gaming_laptop.glb"
         scale="1 1 1"
-        position="0 0 -2" 
-        rotation="0 180 0">
+        position="0 0 -2"
+        rotation="0 180 0"
+        gesture-handler>
       </a-entity>
-      
+
       <a-entity camera></a-entity>
     </a-scene>
   </body>
